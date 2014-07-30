@@ -1,0 +1,47 @@
+<h1>Cliente > Modificar Cliente</h1>
+<p>Este modulo le permitira modificar un Cliente de la empresa, rellene muy bien los campos para no realizar una inserción erronea.</p>
+<p>Ingrese el nit del Cliente que desea Modificar un usuario.</p>
+<br>
+<div class="datos_modifica">
+	<h3>Cliente Modificado</h3>
+	<p><b>Nombre :</b> <?php echo $cliente_modificado['Nombre_cliente']; ?> </p>
+	<p><b>Apellido :</b> <?php echo $cliente_modificado['Apellido_cliente']; ?> </p>
+	<p><b>Telefono :</b> <?php echo $cliente_modificado['Telefono_cliente']; ?> </p>
+	<p><b>Direccion :</b> <?php echo $cliente_modificado['Direccion_cliente']; ?> </p>
+
+</div>
+<br>
+<div id="tablaRegistro">
+	<table border="1" >
+	    <caption>Clientes</caption>
+	        <thead>
+	            <th>Identificacion</th>
+	            <th>Nombre</th>
+	            <th>Apellido</th>
+	            <th>Telefono</th>
+	            <th>Direccion</th>
+	        </thead>
+	         <tbody>
+	            <?php foreach ($this->clientes as $dato){ ?>
+	        <tr style="background-color:<?php echo $this->cycle(array("#008FFF","#F8B161"))->next()?>">
+
+	            <td><?php echo $dato["Nit_cliente"] ?></td>
+	            <td><?php echo $dato["Nombre_cliente"] ?></td>
+	            <td><?php echo $dato["Apellido_cliente"] ?></td>
+	            <td><?php echo $dato["Telefono_cliente"] ?></td>
+	            <td><?php echo $dato["Direccion_cliente"] ?></td>
+	        </tr>
+	    <?php } ?>
+
+	    <?php
+	    $this->cycle()->assign(array("#008FFF", "#F8B161"));
+	    $this->cycle()->prev();
+	    ?>
+        </tbody>
+    </table>
+</div>
+<div>
+	<?php 
+	echo '<a href="'.$this->url.'/cliente/modifica'.'">Desea Modificar Otro Usuario</a>'
+	?>
+</div>

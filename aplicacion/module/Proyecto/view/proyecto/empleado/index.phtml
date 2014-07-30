@@ -1,0 +1,41 @@
+<h1>Bienvenido a la seccion de Empleados</h1>
+<div id="tablaRegistro" style="text-align:left">
+	<table border="1" >
+	<caption>Empleados Registrados</caption>
+		<thead>
+			<th>Identificacion</th>
+			<th>Cargo</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Telefono</th>
+			<th>Direccion</th>
+		</thead>
+		<tbody>
+			<?php foreach ($this->datos as $dato){ ?>
+        <tr style="background-color:<?php echo $this->cycle(array("#008FFF","#F8B161"))->next()?>">
+
+            <td><?php echo $dato["Id_Usuario"] ?></td>
+            <td><?php echo $dato["Cargo_Id_Cargo"] ?></td>
+            <td><?php echo $dato["Nombre_usuario"] ?></td>
+            <td><?php echo $dato["Apellido_Usuario"] ?></td>
+            <td><?php echo $dato["Telefono_Usuario"] ?></td>
+            <td><?php echo $dato["Direccion_Usuario"] ?></td>
+        </tr>
+    <?php } ?>
+
+    <?php
+    $this->cycle()->assign(array("#008FFF", "#F8B161"));
+    $this->cycle()->prev();
+    ?>
+		</tbody>
+	</table>
+</div>
+
+<?php
+    if(!empty($this->respuesta))
+    {
+        ?>
+        <p><?php echo $this->respuesta; ?></p>
+        <?php
+    }
+ ?>

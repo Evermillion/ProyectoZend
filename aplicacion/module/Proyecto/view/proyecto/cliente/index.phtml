@@ -1,0 +1,28 @@
+<h1>Bienvenido a la seccion de Clientes</h1>
+<table border="1" >
+    <caption>Clientes Registrados</caption>
+        <thead>
+            <th>Identificacion</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+        </thead>
+         <tbody>
+            <?php foreach ($this->datos as $dato){ ?>
+        <tr style="background-color:<?php echo $this->cycle(array("#008FFF","#F8B161"))->next()?>">
+
+            <td><?php echo $dato["Nit_cliente"] ?></td>
+            <td><?php echo $dato["Nombre_cliente"] ?></td>
+            <td><?php echo $dato["Apellido_cliente"] ?></td>
+            <td><?php echo $dato["Telefono_cliente"] ?></td>
+            <td><?php echo $dato["Direccion_cliente"] ?></td>
+        </tr>
+    <?php } ?>
+
+    <?php
+    $this->cycle()->assign(array("#008FFF", "#F8B161"));
+    $this->cycle()->prev();
+    ?>
+        </tbody>
+    </table>

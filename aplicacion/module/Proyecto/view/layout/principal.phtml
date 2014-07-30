@@ -1,0 +1,91 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="es">
+    <head>
+        <?php echo $this->headMeta()->setCharset('utf-8')?>
+        <?php echo $this->headTitle('Variedades Dolly') ?>
+        <?php echo $this->headTitle($this->valor)?>
+        <?php echo $this->headLink()->prependStylesheet($this->basePath().'/css/stylesheet.css')?>
+        <?php echo $this->headStyle()?>
+        <?php echo $this->headScript()->prependFile($this->basePath().'/js/jquery.min.js')?>
+        <?php echo $this->headScript()->prependFile($this->basePath().'/js/scriptPrincipal.js')?>
+        <link href='http://fonts.googleapis.com/css?family=Underdog' rel='stylesheet'>
+        <script src = "http://code.jquery.com/jquery-1.10.1.min.js" ></script>
+        <script src="scriptPrincipal.js"></script>
+    </head>
+    <body>
+        <div id='contenido'>
+            <header>
+                <hgroup>
+                    <h1>Variedades Dolly</h1>
+                </hgroup>
+                <nav>
+                <?php echo $this->navigation('navigation')->menu()->setUlClass('Navegacion'); ?>
+                    <!--
+                    <ul class="Navegacion">
+                        <li><a href="Inicio.php">Inicio</a></li>
+                        <li>
+                            <a href="#">Cliente</a>
+                            <ul>
+                                <li><a href="AgregarCliente.php">Agregar Cliente</a></li>
+                                <li><a href="ModificarCliente.php">Modificar Cliente</a></li>
+                                <li><a href="BorrarCliente.php">Eliminar Cliente</a></li>
+                                <li><a href="VerCliente.php">Ver Clientes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Productos</a>
+                            <ul>
+                                <li><a href="AgregarProducto.php">Agregar Productos</a></li>
+                                <li><a href="ModificarProducto.php">Modificar Productos</a></li>
+                                <li><a href="BorrarProducto.php">Eliminar Productos</a></li>
+                                <li><a href="ComprarProductos.php">Comprar Productos</a></li>
+                                <li><a href="VerProducto.php">Ver Productos</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Proveedores</a>
+                            <ul>
+                                <li><a href="AgregarProveedor.php">Agregar Proveedor</a></li>
+                                <li><a href="ModificarProveedor.php">Modificar Proveedor</a></li>
+                                <li><a href="BorrarProveedor.php">Eliminar Proveedor</a></li>
+                                <li><a href="VerProveedor.php">Ver Proveedor</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Empleados</a>
+                            <ul>
+                                <li><a href="AgregarEmpleado.php">AgregarEmpleado</a></li>
+                                <li><a href="ModificarEmpleado.php">ModificarEmpleado</a></li>
+                                <li><a href="BorrarEmpleado.php">EliminarEmpleado</a></li>
+                                <li><a href="VerEmpleado.php">VerEmpleado</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                        <a href="">Facturacion</a>
+                            <ul>
+                            <li><a href="Facturacion.php">Realizar Factura</a></li>
+                            <li><a href="VerFactura.php">Ver Facturas</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                    -->
+                </nav>
+            </header>
+            <section id="conten">
+                <div id='textoPr'>
+                    <article>
+                        <?php echo $this->content?>
+                    </article>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <canvas id="miCanvas">
+            </canvas>
+        </footer>
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

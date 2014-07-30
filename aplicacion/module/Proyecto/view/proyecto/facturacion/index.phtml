@@ -1,0 +1,16 @@
+<h1>Bienvenido a la seccion de Facturacion</h1>
+<p>En esta sección podra realizar todas las facturas de la empresa.</p>
+<div id="formRegistro">
+<?php 
+	$form=$this->form;
+	$form->prepare();
+	$form->setAttributes(array(
+				'action'=>$this->url.'/fsacturacion',
+				'method'=>'post',
+			));
+	$formLabel=$this->plugin('formLabel');
+	echo $this->form()->openTag($form);
+?>	
+
+
+</div>

@@ -1,0 +1,29 @@
+<h1>Bienvenido a la seccion de Proveedores</h1>
+<p>En este modulo usted podra realizar las operaciones de Agregar, ver, Modificar y Eliminar datos relacionados a los Proveedores.</p>
+<table border="1" >
+    <caption>Proveedores Registrados</caption>
+        <thead>
+            <th>Identificacion</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+        </thead>
+        <tbody>
+            <?php foreach ($this->datos as $dato){ ?>
+	        <tr style="background-color:<?php echo $this->cycle(array("#008FFF","#F8B161"))->next()?>">
+
+	            <td><?php echo $dato["Id_Proveedor"] ?></td>
+	            <td><?php echo $dato["Nombre_Proveedor"] ?></td>
+	            <td><?php echo $dato["Apellido_Proveedor"] ?></td>
+	            <td><?php echo $dato["Direccion_Proveedor"] ?></td>
+	            <td><?php echo $dato["Telefono_Proveedor"] ?></td>
+	        </tr>
+    <?php } ?>
+
+    <?php
+    $this->cycle()->assign(array("#008FFF", "#F8B161"));
+    $this->cycle()->prev();
+    ?>
+        </tbody>
+<table>

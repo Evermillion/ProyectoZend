@@ -1,0 +1,29 @@
+<h1>Bienvenido a la seccion de Productos</h1>
+<p>En este modulo usted podra realizar las operaciones de Agregar, ver, Modificar y Eliminar datos relacionados a los Productos.</p>
+<div id="tablaRegistro">
+    <table border="1" >
+    <caption>Productos Registrados</caption>
+        <thead>
+            <th>Referencia</th>
+            <th>Categoria</th>
+            <th>Precio</th>
+            <th>Existencia</th>
+        </thead>
+         <tbody>
+            <?php foreach ($this->datos as $dato){ ?>
+        <tr style="background-color:<?php echo $this->cycle(array("#008FFF","#F8B161"))->next()?>">
+
+            <td><?php echo $dato["Referencia_producto"] ?></td>
+            <td><?php echo $dato["Categoria_Id_Categoria"] ?></td>
+            <td><?php echo $dato["Precio_producto"] ?></td>
+            <td><?php echo $dato["Existencia_producto"] ?></td>
+        </tr>
+    <?php } ?>
+
+    <?php
+    $this->cycle()->assign(array("#008FFF", "#F8B161"));
+    $this->cycle()->prev();
+    ?>
+        </tbody>
+    </table>
+</div>
